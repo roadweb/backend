@@ -11,10 +11,32 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::group(['prefix' => 'api', 'middleware' => ['api']], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+    Route::resource('userdetails', 'UserDetailsController');
+    Route::resource('job', 'JobController');
+    Route::resource('socialnetwork', 'SocialNetworkController');
+    Route::resource('usersocialnetwork', 'UserSocialNetworkController');
+    Route::resource('training', 'TrainingController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('post', 'PostController');
+    Route::resource('asks', 'AsksController');
+    Route::resource('seo', 'SeoController');
+    Route::resource('tags', 'TagsController');
+    Route::resource('poststags', 'PostsTagsController');
+    Route::resource('user', 'UserController');
+    Route::resource('right', 'RightController');
+    Route::resource('state', 'StateController');
+    Route::resource('anonymous', 'AnonymousController');
+});
 /*
 |--------------------------------------------------------------------------
 | Application Routes
