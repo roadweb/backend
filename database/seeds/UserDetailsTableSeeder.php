@@ -9,7 +9,7 @@ class UserDetailsTableSeeder extends Seeder {
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             DB::table('userdetails')->insert([
                 'job_id'=>rand(1,5),
                 'right_id'=>rand(1,5),
@@ -27,7 +27,6 @@ class UserDetailsTableSeeder extends Seeder {
                 'bio'=>$faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                 'asso'=>rand(0,1),
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
                 'website'=>$faker->url,
             ]);
         }

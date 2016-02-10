@@ -16,7 +16,7 @@ class PostTableSeeder extends Seeder {
                 'category_id' => rand(1, 5),
                 'job_id' => rand(1, 5),
                 'userdetails_id' => rand(1, 10),
-                'title' => $faker->unique()->title,
+                'title' => $faker->unique()->sentence,
                 'resume' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                 'matter' => $faker->paragraph($nbSentences = 20),
                 'is_sticky' => rand(0, 1),
@@ -24,7 +24,6 @@ class PostTableSeeder extends Seeder {
                 'published' => rand(0,1)*$token,
                 'validated' => $token,
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
             ]);
         }
     }

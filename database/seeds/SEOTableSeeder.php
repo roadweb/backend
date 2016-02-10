@@ -17,7 +17,7 @@ class SEOTableSeeder extends Seeder {
                 'title_thumb'=> $faker->word,
                 'head_title'=> $faker->title,
                 'head_description'=>$faker->sentence,
-                'head_keywords'=>$faker->words($nb = 3, $asText = false),
+                'head_keywords'=>$faker->word,
             ]);
         }
     }

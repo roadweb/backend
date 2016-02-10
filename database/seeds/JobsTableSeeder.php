@@ -13,7 +13,6 @@ class JobsTableSeeder extends Seeder {
             DB::table('jobs')->insert([
                 'name' => $faker->unique()->word,
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
             ]);
         }
     }

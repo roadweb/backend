@@ -11,7 +11,7 @@ class PostController extends Controller {
    */
   public function index()
   {
-    $posts = Post::all();
+    $posts = Post::select('id', 'created_at')->get();
     return $posts;
   }
 

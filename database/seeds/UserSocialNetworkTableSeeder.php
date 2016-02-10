@@ -20,11 +20,6 @@ class UserSocialNetworkTableSeeder extends Seeder {
                 'socialnetwork_id'=> rand(3,4),
                 'url' => $faker->unique()->url,
             ]);
-            DB::table('user_socialnetwork')->insert([
-                'userdetails_id'=> $i+1,
-                'socialnetwork_id'=> rand(0,1)*5,
-                'url' => $faker->unique()->url,
-            ]);
         }
     }
 }

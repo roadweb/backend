@@ -10,6 +10,8 @@ class AskTableSeeder extends Seeder {
         $type = ['anonymous', 'users'];
 
         for ($i = 0; $i < 100; $i++) {
+            $postId = rand(0,1)*rand(1,100);
+            if ($postId==0){$postId=null;}
             DB::table('asks')->insert([
                 'job_id'=> rand(1,5),
                 'manager_id'=> rand(1,10),
@@ -19,8 +21,7 @@ class AskTableSeeder extends Seeder {
                 'matter'=> $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                 'likes'=> rand(1,5000),
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
-                'post_id'=>rand(0,1)*rand(1,100),
+                'post_id'=>$postId,
             ]);
         }
     }
