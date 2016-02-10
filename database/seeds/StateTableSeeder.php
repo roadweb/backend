@@ -13,7 +13,6 @@ class StateTableSeeder extends Seeder {
             DB::table('state')->insert([
                 'name' => $faker->unique()->word,
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
             ]);
         }
     }

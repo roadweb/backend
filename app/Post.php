@@ -13,8 +13,18 @@ class Post extends Model {
 	use SoftDeletes;
 
 	protected $dates = ['deleted_at'];
-	protected $fillable = array('category_id', 'job_id', 'userdetails_id', 'title', 'resume', 'matter', 'is_sticky', 'sticky_end', 'published', 'validated', 'timestamps');
-	protected $visible = array('category_id', 'job_id', 'userdetails_id', 'title', 'resume', 'matter', 'is_sticky', 'sticky_end', 'published');
+	protected $fillable = array(
+		'category_id',
+		'job_id',
+		'userdetails_id',
+		'title', 'resume',
+		'matter', 'is_sticky',
+		'sticky_end',
+		'published',
+		'validated',
+		'created_at',
+		'updated_at');
+	// protected $visible = array('category_id', 'job_id', 'userdetails_id', 'title', 'resume', 'matter', 'is_sticky', 'sticky_end', 'published');
 
 	public function userdetails()
 	{

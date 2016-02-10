@@ -13,7 +13,6 @@ class AnonymousTableSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             DB::table('anonymous')->insert([
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
                 'email' => $faker->unique()->email,
                 'username' => $faker->unique()->userName,
             ]);

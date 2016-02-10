@@ -17,10 +17,6 @@ class PostHasTagTableSeeder extends Seeder {
                 'post_id' => $i+1,
                 'tag_id' => rand(3,4),
             ]);
-            DB::table('posts_has_tags')->insert([
-                'post_id' => $i+1,
-                'tag_id' => rand(0,1)*5,
-            ]);
         }
     }
 }

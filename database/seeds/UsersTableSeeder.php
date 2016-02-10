@@ -16,7 +16,6 @@ class UsersTableSeeder extends Seeder {
                 'username' => $faker->unique()->userName,
                 'password' => bcrypt('password' . $i),
                 'created_at' => $faker->unixTime($max = 'now'),
-                'updated_at' => $faker->unixTime($max = 'now'),
             ]);
         }
     }

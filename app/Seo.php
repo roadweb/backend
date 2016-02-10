@@ -13,7 +13,14 @@ class Seo extends Model {
 	use SoftDeletes;
 
 	protected $dates = ['deleted_at'];
-	protected $fillable = array('url_thumb', 'alt_thumb', 'title_thumb', 'head_title', 'head_description', 'head_keywords');
+	protected $fillable = array(
+		'post_id',
+		'url_thumb',
+		'alt_thumb',
+		'title_thumb',
+		'head_title',
+		'head_description',
+		'head_keywords');
 
 	public function posts()
 	{
