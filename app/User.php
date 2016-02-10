@@ -4,23 +4,27 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+class User extends Authenticatable {
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+	protected $table = 'users';
+	public $timestamps = true;
+	protected $fillable = array('email', 'username', 'timestamps');
+	protected $visible = array('username');
+	protected $hidden = array('password');
+
+	public function asksManager()
+	{
+		return $this->hasMany('Asks', 'manager_id');
+	}
+
+	public function asks()
+	{
+		return $this->morphMany('Asks', 'askable');
+	}
+
+	public function userdetails()
+	{
+		return $this->hasOne('User');
+	}
+
 }
