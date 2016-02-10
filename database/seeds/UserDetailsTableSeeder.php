@@ -26,7 +26,7 @@ class UserDetailsTableSeeder extends Seeder {
                 'visibility'=>rand(0,1),
                 'bio'=>$faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                 'asso'=>rand(0,1),
-                'created_at' => $faker->unixTime($max = 'now'),
+                'created_at' => $faker->dateTime($max = 'now'),
                 'website'=>$faker->url,
             ]);
         }

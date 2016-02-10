@@ -23,7 +23,7 @@ class PostTableSeeder extends Seeder {
                 'sticky_end' => $faker->date('Y-m-d', $unixTimestamp),
                 'published' => rand(0,1)*$token,
                 'validated' => $token,
-                'created_at' => $faker->unixTime($max = 'now'),
+                'created_at' => $faker->dateTime($max = 'now'),
             ]);
         }
     }

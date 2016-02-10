@@ -9,7 +9,6 @@ class User extends Authenticatable {
 	protected $table = 'users';
 	public $timestamps = true;
 	protected $fillable = array('email', 'username', 'timestamps');
-	protected $visible = array('username');
 	protected $hidden = array('password');
 
 	public function asksManager()

@@ -11,7 +11,7 @@ class SocialNetworkTableSeeder extends Seeder {
 
         for ($i = 0; $i < 5; $i++) {
             DB::table('socialnetwork')->insert([
-                'created_at' => $faker->unixTime($max = 'now'),
+                'created_at' => $faker->dateTime($max = 'now'),
                 'name' => $faker->unique()->word,
             ]);
         }
