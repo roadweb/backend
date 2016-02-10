@@ -20,7 +20,7 @@ class AskTableSeeder extends Seeder {
                 'askable_type'=> $type[rand(0,1)],
                 'matter'=> $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                 'likes'=> rand(1,5000),
-                'created_at' => $faker->unixTime($max = 'now'),
+                'created_at' => $faker->dateTime($max = 'now'),
                 'post_id'=>$postId,
             ]);
         }

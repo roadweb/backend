@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder {
                 'email' => 'email' . $i . '@blop.fr',
                 'username' => $faker->unique()->userName,
                 'password' => bcrypt('password' . $i),
-                'created_at' => $faker->unixTime($max = 'now'),
+                'created_at' => $faker->dateTime($max = 'now'),
             ]);
         }
     }
